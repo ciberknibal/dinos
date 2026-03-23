@@ -1,0 +1,107 @@
+[
+  {
+    "id": "riojasaurus",
+    "name": "Riojasaurio",
+    "image": "assets/images/riojasaurus.png"
+  },
+  {
+    "id": "trex",
+    "name": "T-Rex",
+    "image": "assets/images/trex.png"
+  },
+  {
+    "id": "triceratops",
+    "name": "Triceratops",
+    "image": "assets/images/triceratops.png"
+  },
+  {
+    "id": "velociraptor",
+    "name": "Velociraptor",
+    "image": "assets/images/velociraptor.png"
+  },
+  {
+    "id": "stegosaurus",
+    "name": "Stegosaurus",
+    "image": "assets/images/stegosaurus.png"
+  },
+  {
+    "id": "brachiosaurus",
+    "name": "Brachiosaurus",
+    "image": "assets/images/brachiosaurus.png"
+  },
+  {
+    "id": "spinosaurus",
+    "name": "Spinosaurus",
+    "image": "assets/images/spinosaurus.png"
+  },
+  {
+    "id": "ankylosaurus",
+    "name": "Ankylosaurus",
+    "image": "assets/images/ankylosaurus.png"
+  },
+  {
+    "id": "pteranodon",
+    "name": "Pteranodon",
+    "image": "assets/images/pteranodon.png"
+  },
+  {
+    "id": "diplodocus",
+    "name": "Diplodocus",
+    "image": "assets/images/diplodocus.png"
+  },
+  {
+    "id": "allosaurus",
+    "name": "Allosaurus",
+    "image": "assets/images/allosaurus.png"
+  },
+  {
+    "id": "parasaurolophus",
+    "name": "Parasaurolophus",
+    "image": "assets/images/parasaurolophus.png"
+  },
+  {
+    "id": "gallimimus",
+    "name": "Gallimimus",
+    "image": "assets/images/gallimimus.png"
+  },
+  {
+    "id": "iguanodon",
+    "name": "Iguanodon",
+    "image": "assets/images/iguanodon.png"
+  },
+  {
+    "id": "carnotaurus",
+    "name": "Carnotaurus",
+    "image": "assets/images/carnotaurus.png"
+  },
+  {
+    "id": "archaeopteryx",
+    "name": "Archaeopteryx",
+    "image": "assets/images/archaeopteryx.png"
+  },
+  {
+    "id": "pachycephalosaurus",
+    "name": "Pachycephalosaurus",
+    "image": "assets/images/pachycephalosaurus.png"
+  },
+  {
+    "id": "dilophosaurus",
+    "name": "Dilophosaurus",
+    "image": "assets/images/dilophosaurus.png"
+  },
+  {
+    "id": "argentinosaurus",
+    "name": "Argentinosaurus",
+    "image": "assets/images/argentinosaurus.png"
+  },
+  {
+    "id": "baryonyx",
+    "name": "Baryonyx",
+    "image": "assets/images/baryonyx.png"
+  },
+  {
+    "id": "compsognathus",
+    "name": "Compsognathus",
+    "image": "assets/images/compsognathus.png"
+  }
+]

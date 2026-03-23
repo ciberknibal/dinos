@@ -1,0 +1,53 @@
+{
+  "id": "stegosaurus",
+  "name": "Stegosaurus",
+  "significado": "Lagarto con tejado",
+  "cuento": "stegosarus.pdf",
+  "period": "jurasico",
+  "diet": "herbivoro",
+  "hip": "ornitisquio",
+  "location": "na",
+  "size": 9,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Tenía placas en la espalda!",
+    "Su cola tenía pinchos para defenderse",
+    "Comía plantas bajitas"
+  ],
+  "description": "El Stegosaurus significa \"Lagarto con tejado\". Medía 9 metros y vivió en el periodo jurasico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      9,
+      1,
+      13
+    ],
+    "images": [
+      "assets/images/stegosaurus.png",
+      "assets/images/allosaurus.png",
+      "assets/images/triceratops.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 4
+}

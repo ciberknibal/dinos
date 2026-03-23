@@ -1,0 +1,8 @@
+
+<svg width="300" height="200" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="transparent"/>
+  <g transform="translate(0, 10)">
+    <path d="M10 80 Q 50 80 80 50 L 150 50 L 190 80 L 150 100 L 50 100 Z" fill="#29B6F6" stroke="black"/>
+  </g>
+  <text x="50%" y="140" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="16" fill="#333" stroke="white" stroke-width="0.5">Diplodocus</text>
+</svg>

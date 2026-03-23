@@ -1,0 +1,53 @@
+{
+  "id": "trex",
+  "name": "T-Rex",
+  "significado": "Rey de los lagartos tiranos",
+  "cuento": "trex.pdf",
+  "period": "cretacico",
+  "diet": "carnivoro",
+  "hip": "saurisquio",
+  "location": "na",
+  "size": 12,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Tenía dientes enormes como plátanos!",
+    "Era el rey de los dinosaurios",
+    "Corría muy rápido para cazar"
+  ],
+  "description": "El T-Rex significa \"Rey de los lagartos tiranos\". Medía 12 metros y vivió en el periodo cretacico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      5,
+      20,
+      12
+    ],
+    "images": [
+      "assets/images/trex.png",
+      "assets/images/iguanodon.png",
+      "assets/images/riojasaurus.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

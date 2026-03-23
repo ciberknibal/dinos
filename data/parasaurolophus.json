@@ -1,0 +1,53 @@
+{
+  "id": "parasaurolophus",
+  "name": "Parasaurolophus",
+  "significado": "Cercano al lagarto con cresta",
+  "cuento": "parasaurolophus.pdf",
+  "period": "cretacico",
+  "diet": "herbivoro",
+  "hip": "ornitisquio",
+  "location": "na",
+  "size": 10,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Tenía una cresta como trompeta!",
+    "Hacía sonidos para hablar",
+    "Vivía cerca del agua"
+  ],
+  "description": "El Parasaurolophus significa \"Cercano al lagarto con cresta\". Medía 10 metros y vivió en el periodo cretacico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      18,
+      7,
+      10
+    ],
+    "images": [
+      "assets/images/parasaurolophus.png",
+      "assets/images/brachiosaurus.png",
+      "assets/images/riojasaurus.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 4
+}

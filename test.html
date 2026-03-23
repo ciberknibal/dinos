@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Dinos</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #E0F7FA; }
+        .test { border: 2px solid red; padding: 10px; margin: 10px; background: white; }
+        button { padding: 10px 20px; font-size: 16px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Test de Carga de Dinosaurios</h1>
+    
+    <div class="test">
+        <h2>1. Test de JSON</h2>
+        <button onclick="testJSON()">Cargar T-Rex JSON</button>
+        <pre id="json-result"></pre>
+    </div>
+    
+    <div class="test">
+        <h2>2. Test de Mapa SVG</h2>
+        <button onclick="testMap()">Cargar Mapa</button>
+        <div id="map-result"></div>
+    </div>
+    
+    <div class="test">
+        <h2>3. Test de Características</h2>
+        <button onclick="testCharacteristics()">Mostrar Características</button>
+        <div id="char-result"></div>
+    </div>
+
+    <script>
+        async function testJSON() {
+            try {
+                const response = await fetch('data/trex.json');
+                const data = await response.json();
+                document.getElementById('json-result').textContent = JSON.stringify(data, null, 2);
+            } catch(e) {
+                document.getElementById('json-result').textContent = 'ERROR: ' + e.message;
+            }
+        }
+        
+        async function testMap() {
+            try {
+                const response = await fetch('assets/icons/world_map_interactive.svg');
+                const svg = await response.text();
+                document.getElementById('map-result').innerHTML = svg;
+            } catch(e) {
+                document.getElementById('map-result').textContent = 'ERROR: ' + e.message;
+            }
+        }
+        
+        function testCharacteristics() {
+            const html = `
+                <div style="display:flex; gap:20px;">
+                    <div style="border:2px solid blue; padding:10px;">
+                        <img src="assets/icons/carnivoro.svg" width="60"><br>Carnívoro
+                    </div>
+                    <div style="border:2px solid green; padding:10px;">
+                        <img src="assets/icons/herbivoro.svg" width="60"><br>Herbívoro
+                    </div>
+                    <div style="border:2px solid orange; padding:10px;">
+                        <img src="assets/icons/triasico.svg" width="60"><br>Triásico
+                    </div>
+                </div>
+            `;
+            document.getElementById('char-result').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

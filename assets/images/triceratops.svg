@@ -1,0 +1,8 @@
+
+<svg width="300" height="200" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="transparent"/>
+  <g transform="translate(0, 10)">
+    <path d="M40 80 Q 40 50 70 50 L 120 50 Q 150 50 160 80 Q 170 110 140 110 L 60 110 Q 30 110 40 80 Z" fill="#FFA726" stroke="black" stroke-width="3"/><path d="M150 60 L 180 40" stroke="white" stroke-width="4"/><path d="M150 70 L 180 80" stroke="white" stroke-width="4"/><path d="M120 50 L 110 30" stroke="white" stroke-width="4"/>
+  </g>
+  <text x="50%" y="140" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="16" fill="#333" stroke="white" stroke-width="0.5">Triceratops</text>
+</svg>

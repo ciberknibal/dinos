@@ -1,0 +1,53 @@
+{
+  "id": "compsognathus",
+  "name": "Compsognathus",
+  "significado": "Mandíbula elegante",
+  "cuento": "compsognathus.pdf",
+  "period": "jurasico",
+  "diet": "carnivoro",
+  "hip": "saurisquio",
+  "location": "eur",
+  "size": 1,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Era pequeñito como un gato!",
+    "Era el dinosaurio más chiquitín",
+    "Corría muy rápido"
+  ],
+  "description": "El Compsognathus significa \"Mandíbula elegante\". Medía 1 metros y vivió en el periodo jurasico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      10,
+      8,
+      1
+    ],
+    "images": [
+      "assets/images/compsognathus.png",
+      "assets/images/ankylosaurus.png",
+      "assets/images/spinosaurus.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

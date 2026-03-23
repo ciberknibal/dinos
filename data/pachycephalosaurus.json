@@ -1,0 +1,53 @@
+{
+  "id": "pachycephalosaurus",
+  "name": "Pachycephalosaurus",
+  "significado": "Lagarto de cabeza gruesa",
+  "cuento": "pachycephalosaurus.pdf",
+  "period": "cretacico",
+  "diet": "herbivoro",
+  "hip": "ornitisquio",
+  "location": "na",
+  "size": 5,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Tenía la cabeza super dura!",
+    "Chocaba cabezas como los carneros",
+    "Su cráneo era muy grueso"
+  ],
+  "description": "El Pachycephalosaurus significa \"Lagarto de cabeza gruesa\". Medía 5 metros y vivió en el periodo cretacico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      5,
+      3,
+      9
+    ],
+    "images": [
+      "assets/images/pachycephalosaurus.png",
+      "assets/images/ankylosaurus.png",
+      "assets/images/velociraptor.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

@@ -1,0 +1,53 @@
+{
+  "id": "gallimimus",
+  "name": "Gallimimus",
+  "significado": "Imitador de gallina",
+  "cuento": "gallimimus.pdf",
+  "period": "cretacico",
+  "diet": "herbivoro",
+  "hip": "saurisquio",
+  "location": "asia",
+  "size": 6,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Parecía un avestruz gigante!",
+    "Corría muy muy rápido",
+    "No tenía dientes"
+  ],
+  "description": "El Gallimimus significa \"Imitador de gallina\". Medía 6 metros y vivió en el periodo cretacico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      1,
+      14,
+      6
+    ],
+    "images": [
+      "assets/images/gallimimus.png",
+      "assets/images/riojasaurus.png",
+      "assets/images/archaeopteryx.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

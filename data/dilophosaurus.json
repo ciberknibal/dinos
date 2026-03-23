@@ -1,0 +1,53 @@
+{
+  "id": "dilophosaurus",
+  "name": "Dilophosaurus",
+  "significado": "Lagarto de dos crestas",
+  "cuento": "dilophosaurus.pdf",
+  "period": "jurasico",
+  "diet": "carnivoro",
+  "hip": "saurisquio",
+  "location": "na",
+  "size": 7,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Tenía dos crestas en la cabeza!",
+    "Era muy rápido y ágil",
+    "Cazaba animales pequeños"
+  ],
+  "description": "El Dilophosaurus significa \"Lagarto de dos crestas\". Medía 7 metros y vivió en el periodo jurasico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      7,
+      11,
+      15
+    ],
+    "images": [
+      "assets/images/dilophosaurus.png",
+      "assets/images/archaeopteryx.png",
+      "assets/images/diplodocus.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

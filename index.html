@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Fichas</title>
+    <link rel="stylesheet" href="css/style.css?v=20">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Pantalla de Inicio (Menú Principal) -->
+        <div id="main-menu" class="screen">
+            <h1 class="menu-title">🦖 Dino Aventuras 🌋</h1>
+            <div class="menu-grid">
+                <button class="menu-btn learn-btn" onclick="showScreen('selection-screen')">
+                    <span class="icon">📖</span>
+                    <span class="text">Aprende sobre Dinosaurios</span>
+                </button>
+                <button class="menu-btn fossils-btn" onclick="showScreen('fossils-screen')">
+                    <span class="icon">🦴</span>
+                    <span class="text">Excavación de Fósiles</span>
+                </button>
+                <button class="menu-btn album-btn" onclick="showScreen('album-screen')">
+                    <span class="icon">🖼️</span>
+                    <span class="text">Álbum de Cromos</span>
+                </button>
+                <button class="menu-btn puzzle-btn" onclick="showScreen('puzzle-screen')">
+                    <span class="icon">🧩</span>
+                    <span class="text">Puzles Dino</span>
+                </button>
+                <button class="menu-btn differences-btn" onclick="showScreen('differences-screen')">
+                    <span class="icon">🔍</span>
+                    <span class="text">Busca las Diferencias</span>
+                </button>
+                <button class="menu-btn extinction-btn" onclick="window.location.href='extinction_story.html'">
+                    <span class="icon">☄️</span>
+                    <span class="text">¿Cómo se extinguieron?</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Pantalla de Selección -->
+        <div id="selection-screen" class="screen hidden">
+            <button class="back-home-btn" onclick="showScreen('main-menu')">🏠 Menú</button>
+            <h1>¡Elige tu Dinosaurio!</h1>
+            <div id="dino-grid" class="grid"></div>
+        </div>
+
+        <!-- Pantallas Esqueleto para nuevos juegos -->
+        <div id="fossils-screen" class="screen hidden">
+            <button class="back-home-btn" onclick="showScreen('main-menu')">🏠 Menú</button>
+            <h1>🦴 Excavación de Fósiles</h1>
+            
+            <div class="fossil-game-container">
+                <div class="fossil-setup" id="fossil-setup">
+                    <h3>¡Elige un dinosaurio para excavar!</h3>
+                    <div id="fossil-dino-grid" class="grid small-grid"></div>
+                </div>
+
+                <div class="fossil-play-area hidden" id="fossil-play-area">
+                    <div class="fossil-header-game">
+                        <h2 id="fossil-target-name">Nombre del Dino</h2>
+                        <button class="action-btn" onclick="resetFossilGame()">🔄 Otra vez</button>
+                    </div>
+                    
+                    <div class="sand-box-container">
+                        <!-- El esqueleto estará debajo -->
+                        <div id="skeleton-underlay" class="skeleton-underlay"></div>
+                        <!-- La arena encima para "rascar" -->
+                        <canvas id="sand-canvas"></canvas>
+                    </div>
+                    <p class="fossil-hint">👆 ¡Pasa el dedo para limpiar la arena!</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="album-screen" class="screen hidden">
+            <button class="back-home-btn" onclick="showScreen('main-menu')">🏠 Menú</button>
+            <h1>🖼️ Mi Álbum de Cromos</h1>
+            
+            <div class="album-container">
+                <div class="album-stats">
+                    <p>¡Has coleccionado <span id="collected-count">0</span> de <span id="total-count">0</span> dinosaurios!</p>
+                    <div class="progress-bar-bg">
+                        <div id="album-progress-bar" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+                
+                <div id="album-grid" class="album-grid">
+                    <!-- Los cromos se cargarán aquí -->
+                </div>
+                
+                <div class="album-actions">
+                    <button class="action-btn" onclick="resetAlbum()">🗑️ Empezar álbum nuevo</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="puzzle-screen" class="screen hidden">
+            <button class="back-home-btn" onclick="showScreen('main-menu')">🏠 Menú</button>
+            <h1>🧩 Puzles Dino</h1>
+            
+            <div class="puzzle-game-container">
+                <div id="puzzle-setup" class="puzzle-setup">
+                    <h3>¡Elige un puzle para armar!</h3>
+                    <div id="puzzle-dino-grid" class="grid small-grid"></div>
+                </div>
+
+                <div id="puzzle-play-area" class="puzzle-play-area hidden">
+                    <div class="puzzle-header">
+                        <h2 id="puzzle-target-name">Dinosaurio</h2>
+                        <button class="action-btn" onclick="resetPuzzleGame()">🔄 Otro Puzle</button>
+                    </div>
+
+                    <div class="puzzle-board-layout">
+                        <!-- Piezas mezcladas a la izquierda/derecha -->
+                        <div id="puzzle-pieces" class="puzzle-pieces-container"></div>
+                        
+                        <!-- Tablero de destino -->
+                        <div id="puzzle-board" class="puzzle-board">
+                            <div class="puzzle-slot" data-index="0"></div>
+                            <div class="puzzle-slot" data-index="1"></div>
+                            <div class="puzzle-slot" data-index="2"></div>
+                            <div class="puzzle-slot" data-index="3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="differences-screen" class="screen hidden">
+            <button class="back-home-btn" onclick="showScreen('main-menu')">🏠 Menú</button>
+            <h1>🔍 Busca las Diferencias</h1>
+            
+            <div class="differences-game-container">
+                <div id="differences-setup" class="differences-setup">
+                    <h3>¡Elige un desafío!</h3>
+                    <div id="differences-dino-grid" class="grid small-grid"></div>
+                </div>
+
+                <div id="differences-play-area" class="differences-play-area hidden">
+                    <div class="differences-header">
+                        <h2>Encuentra las 3 diferencias</h2>
+                        <div class="diff-counter">⭐ <span id="diff-found">0</span> / 3</div>
+                        <button class="action-btn" onclick="resetDiffGame()">🔄 Otro</button>
+                    </div>
+
+                    <div class="images-comparison">
+                        <div class="diff-img-box">
+                            <img id="diff-img-orig" src="" alt="Original">
+                        </div>
+                        <div class="diff-img-box" id="diff-target-area">
+                            <img id="diff-img-modified" src="" alt="Modificado">
+                            <!-- Los círculos de acierto se inyectan aquí -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ficha de Actividad -->
+        <div id="activity-screen" class="screen hidden">
+            <button id="back-btn" onclick="location.reload()">⬅ Volver</button>
+            
+            <div class="paper-sheet">
+                <!-- Nombre y Botón de Escribir -->
+                <div class="header-section">
+                    <div class="name-audio-row">
+                        <h2 id="dino-name-display">Nombre del Dino</h2>
+                        <button class="audio-btn" onclick="speakText(currentDino.name)" title="Escuchar nombre">🔊</button>
+                    </div>
+                    <div class="meaning-audio-row">
+                        <p id="dino-meaning-display" class="dino-meaning"></p>
+                        <button class="audio-btn small" onclick="speakText(currentDino.significado)" title="Escuchar significado">🔊</button>
+                    </div>
+                    <div class="action-buttons-row">
+                        <button id="write-btn" class="action-btn" onclick="openWritingGame()">
+                            ✏️ Aprender a escribir
+                        </button>
+                    </div>
+                </div>
+
+                <div class="content-wrapper">
+                    <!-- IZQUIERDA: Imagen -->
+                    <div class="left-column">
+                        <div class="section-box">
+                            <h3>📷 Foto del Dinosaurio</h3>
+                            <div id="image-options" class="options-container"></div>
+                            <div id="final-image" class="hidden"></div>
+                        </div>
+                        
+                        <!-- RECUADRO DE CARACTERÍSTICAS -->
+                        <div class="section-box caracteristicas-box">
+                            <h3>⭐ ¡Cosas Increíbles!</h3>
+                            <div id="caracteristicas-list" class="caracteristicas-list">
+                                <!-- Se llenarán dinámicamente -->
+                            </div>
+                        </div>
+
+                        <!-- BOTÓN COLOREAR (NUEVO) -->
+                        <button id="color-btn" class="story-banner-btn color-btn" onclick="openColoring()">
+                            <img src="imagenes/colorea.png" alt="Pintar">
+                            <span>¡Colorea el Dino! 🎨</span>
+                        </button>
+
+                        <!-- BOTÓN CUENTO (Debajo de características) -->
+                        <button id="story-btn" class="story-banner-btn" onclick="openStory()">
+                            <img src="imagenes/cuento.jpg" alt="Cuento">
+                            <span>¡Lee el Cuento del Dino! 📖</span>
+                        </button>
+                    </div>
+
+                    <!-- DERECHA: Características -->
+                    <div class="right-column">
+                        
+                        <!-- ALIMENTACIÓN -->
+                        <div class="section-box">
+                            <h3>🍖 Alimentación</h3>
+                            <div class="options-row" id="diet-options"></div>
+                            
+                            <!-- Mini-juego de alimentación -->
+                            <div id="feeding-game" class="feeding-game hidden">
+                                <div class="feeding-zone" id="dino-mouth" ondrop="dropFood(event)" ondragover="allowDrop(event)">
+                                    <span class="mouth-icon">😋</span>
+                                    <p>¡Dame de comer!</p>
+                                </div>
+                                <div class="food-items">
+                                    <div id="food-meat" class="food-item" draggable="true" ondragstart="dragFood(event)" data-food="carnivoro">🍖</div>
+                                    <div id="food-plant" class="food-item" draggable="true" ondragstart="dragFood(event)" data-food="herbivoro">🌿</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- PATAS (NUEVO) -->
+                        <div class="section-box">
+                            <h3>🐾 Patas</h3>
+                            <div class="options-row" id="legs-options"></div>
+                        </div>
+                        
+                        <!-- CADERA -->
+                        <div class="section-box">
+                            <h3>🦴 Cadera</h3>
+                            <div class="options-row" id="hip-options"></div>
+                        </div>
+
+                        <!-- PERIODO -->
+                        <div class="section-box">
+                            <h3>⏰ Periodo</h3>
+                            <div class="options-row" id="period-options"></div>
+                        </div>
+
+                        <!-- REPRODUCCIÓN (NUEVO) -->
+                        <div class="section-box">
+                            <h3>🥚 Reproducción</h3>
+                            <div class="options-row" id="reproduction-options"></div>
+                        </div>
+
+                        <!-- TAMAÑO -->
+                        <div class="section-box">
+                            <h3>📏 Tamaño</h3>
+                            <div class="options-row" id="size-options"></div>
+                            
+                            <!-- Comparación de tamaño visual -->
+                            <div id="size-comparison" class="size-comparison hidden">
+                                <div class="comparison-track">
+                                    <div class="human-reference">
+                                        <span class="label">Tú (1m)</span>
+                                        <div class="human-figure">🧒</div>
+                                    </div>
+                                    <div id="dino-scale-figure" class="dino-figure">🦕</div>
+                                </div>
+                                <p id="size-fact-text" class="size-fact"></p>
+                            </div>
+                        </div>
+                        
+                        <!-- MAPA -->
+                        <div class="section-box">
+                            <h3>🌍 Dónde Vivió</h3>
+                            <div class="map-container">
+                                <!-- Imagen de fondo del usuario -->
+                                <img src="imagenes/mapa.png" class="map-bg" alt="Mapa del mundo">
+                                <!-- SVG interactivo superpuesto -->
+                                <div class="map-overlay-container">
+                                    <!-- Se inyecta el SVG aquí -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- NOMBRE (Firma) -->
+                <div class="footer-section">
+                    <div class="godfather-box">
+                        <h3>✍️ Apadrinado por:</h3>
+                        <div id="name-input" class="handwritten-input"></div>
+                    </div>
+                    <div id="keyboard-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Cuento (Rediseñado) -->
+        <div id="story-modal" class="modal hidden">
+            <div class="modal-content story-modal-content">
+                <!-- Header -->
+                <div class="story-header">
+                    <h2 id="story-title">Cuento del Dino</h2>
+                    <div class="story-actions">
+                        <a id="download-story-btn" href="#" class="action-btn header-btn" download>📥 Descargar</a>
+                        <button class="close-btn" onclick="closeStory()">✕</button>
+                    </div>
+                </div>
+                
+                <!-- Visor -->
+                <div class="story-body">
+                    <iframe id="story-iframe" src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Aprender a Escribir -->
+        <div id="writing-modal" class="modal hidden">
+            <div class="modal-content writing-content-full">
+                <div class="coloring-header">
+                    <h2>¡Aprende a escribir!</h2>
+                    <button class="close-btn" onclick="closeWritingGame()">✕</button>
+                </div>
+                        <div class="writing-game-area">
+                            <h1 id="target-name-bg" class="target-word">DINOSAURIO</h1>
+                            <h1 id="player-input" class="player-word"></h1>
+                            <div id="writing-keyboard" class="writing-keyboard">
+                                <!-- Teclado generado por JS -->
+                            </div>
+                        </div>
+            </div>
+        </div>
+
+        <!-- Modal: Colorear Dino -->
+        <div id="coloring-modal" class="modal hidden">
+            <div class="modal-content coloring-content">
+                <!-- Header (Fixed) -->
+                <div class="coloring-header">
+                    <h2>¡A Colorear!</h2>
+                    <button class="close-btn" onclick="closeColoring()">✕</button>
+                </div>
+                
+                <div class="coloring-interface">
+                    <!-- Área de Dibujo (Flex Grow) -->
+                    <div class="canvas-container">
+                        <canvas id="coloring-canvas"></canvas>
+                    </div>
+
+                    <!-- Herramientas (Fixed Height/Width) -->
+                    <div class="coloring-tools">
+                        
+                        <!-- Grupo: Herramientas -->
+                        <div class="tool-group">
+                            <h3>Herramientas</h3>
+                            <div class="tools-buttons">
+                                <button class="tool-btn active" id="tool-pencil" onclick="setTool('pencil')">✏️</button>
+                                <button class="tool-btn" id="tool-bucket" onclick="setTool('bucket')">🪣</button>
+                                <button class="tool-btn" id="tool-eraser" onclick="setTool('eraser')">🧼</button>
+                            </div>
+                        </div>
+
+                        <!-- Grupo: Grosor -->
+                        <div class="tool-group">
+                            <h3>Grosor</h3>
+                            <input type="range" id="brush-size" min="1" max="30" value="10">
+                        </div>
+
+                        <!-- Grupo: Colores -->
+                        <div class="tool-group palette-container">
+                            <h3>Colores</h3>
+                            <div id="color-palette" class="palette-grid"></div>
+                        </div>
+
+                        <!-- Grupo: Acciones -->
+                        <div class="tool-group actions">
+                            <h3>Acciones</h3>
+                            <div class="tools-actions">
+                                <button class="action-btn" onclick="clearCanvas()">🗑️</button>
+                                <button class="action-btn print-btn" onclick="printDino()">🖨️</button>
+                                <button class="action-btn save-btn" onclick="saveDino()">💾</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Celebración -->
+        <div id="celebration-overlay" class="hidden">
+            <div class="celebration-content">
+                <h1>¡Muy Bien! 🎉</h1>
+                <div class="stars">⭐⭐⭐</div>
+                
+                <div class="celebration-card">
+                    <p class="congrats-text">¡Has conseguido el cromo!</p>
+                    <img id="celebration-cromo" src="" alt="Cromo">
+                    <h2 id="celebration-dino-name">Nombre</h2>
+                </div>
+
+                <button class="action-btn win-btn" onclick="location.reload()">Otro Dino</button>
+            </div>
+        </div>
+        
+        <!-- Confetti Canvas -->
+        <canvas id="confetti-canvas"></canvas>
+    </div>
+
+    <audio id="sound-correct" src="sounds/correct.mp3"></audio>
+    <audio id="sound-wrong" src="sounds/incorrecto.mp3"></audio>
+    <audio id="sound-win" src="sounds/win.mp3"></audio>
+
+    <script src="js/app.js?v=final"></script>
+</body>
+</html>

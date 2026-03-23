@@ -1,0 +1,53 @@
+{
+  "id": "spinosaurus",
+  "name": "Spinosaurus",
+  "significado": "Lagarto de espina",
+  "cuento": "spinosaurio.pdf",
+  "period": "cretacico",
+  "diet": "carnivoro",
+  "hip": "saurisquio",
+  "location": "afr",
+  "size": 15,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Tenía una vela gigante en la espalda!",
+    "Le gustaba nadar y pescar",
+    "Era más grande que el T-Rex"
+  ],
+  "description": "El Spinosaurus significa \"Lagarto de espina\". Medía 15 metros y vivió en el periodo cretacico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      15,
+      11,
+      22
+    ],
+    "images": [
+      "assets/images/spinosaurus.png",
+      "assets/images/pteranodon.png",
+      "assets/images/ankylosaurus.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

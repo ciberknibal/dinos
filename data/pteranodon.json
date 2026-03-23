@@ -1,0 +1,53 @@
+{
+  "id": "pteranodon",
+  "name": "Pteranodon",
+  "significado": "Ala sin dientes",
+  "cuento": "pteranodon.pdf",
+  "period": "cretacico",
+  "diet": "carnivoro",
+  "hip": "saurisquio",
+  "location": "na",
+  "size": 6,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Podía volar como un avión!",
+    "Tenía un pico largo sin dientes",
+    "Sus alas eran enormes"
+  ],
+  "description": "El Pteranodon significa \"Ala sin dientes\". Medía 6 metros y vivió en el periodo cretacico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      15,
+      6,
+      12
+    ],
+    "images": [
+      "assets/images/pteranodon.png",
+      "assets/images/argentinosaurus.png",
+      "assets/images/triceratops.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

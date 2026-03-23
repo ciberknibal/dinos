@@ -1,0 +1,53 @@
+{
+  "id": "archaeopteryx",
+  "name": "Archaeopteryx",
+  "significado": "Ala antigua",
+  "cuento": "archaeropteryx.pdf",
+  "period": "jurasico",
+  "diet": "carnivoro",
+  "hip": "saurisquio",
+  "location": "eur",
+  "size": 1,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Era mitad dinosaurio, mitad pájaro!",
+    "Tenía plumas de colores",
+    "Era pequeñito como una paloma"
+  ],
+  "description": "El Archaeopteryx significa \"Ala antigua\". Medía 1 metros y vivió en el periodo jurasico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      1,
+      6,
+      8
+    ],
+    "images": [
+      "assets/images/archaeopteryx.png",
+      "assets/images/carnotaurus.png",
+      "assets/images/spinosaurus.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

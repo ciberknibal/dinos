@@ -1,0 +1,19 @@
+<svg version="1.1" id="world-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2816 1536" preserveAspectRatio="none" style="width:100%; height:100%; display:block;">
+    <!-- América del Norte (na) -->
+    <path id="na" class="continent" d="M 300,150 L 800,150 L 900,400 L 800,750 L 500,850 L 250,600 Z"/>
+    
+    <!-- América del Sur (sa) -->
+    <path id="sa" class="continent" d="M 700,850 L 1000,850 L 1100,1100 L 900,1450 L 750,1450 L 650,1100 Z"/>
+    
+    <!-- Europa (eur) -->
+    <path id="eur" class="continent" d="M 1300,200 L 1650,200 L 1700,500 L 1350,550 L 1250,400 Z"/>
+    
+    <!-- África (afr) -->
+    <path id="afr" class="continent" d="M 1300,600 L 1700,600 L 1900,900 L 1750,1350 L 1450,1350 L 1250,900 Z"/>
+    
+    <!-- Asia (asia) -->
+    <path id="asia" class="continent" d="M 1700,100 L 2600,100 L 2700,500 L 2500,850 L 1800,850 L 1700,500 Z"/>
+    
+    <!-- Australia (aus) -->
+    <path id="aus" class="continent" d="M 2200,1000 L 2650,1000 L 2700,1350 L 2400,1450 L 2150,1350 Z"/>
+</svg>

@@ -1,0 +1,53 @@
+{
+  "id": "riojasaurus",
+  "name": "Riojasaurio",
+  "significado": "Lagarto de La Rioja",
+  "cuento": "riojasaurio.pdf",
+  "period": "triasico",
+  "diet": "herbivoro",
+  "hip": "saurisquio",
+  "location": "sa",
+  "size": 10,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Era muy largo como un autobús!",
+    "Comía plantas todo el día",
+    "Vivió en La Rioja, Argentina"
+  ],
+  "description": "El Riojasaurio significa \"Lagarto de La Rioja\". Medía 10 metros y vivió en el periodo triasico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      10,
+      2,
+      21
+    ],
+    "images": [
+      "assets/images/riojasaurus.png",
+      "assets/images/trex.png",
+      "assets/images/ankylosaurus.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 4
+}

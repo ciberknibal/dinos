@@ -1,0 +1,53 @@
+{
+  "id": "ankylosaurus",
+  "name": "Ankylosaurus",
+  "significado": "Lagarto acorazado",
+  "cuento": "ankylosaurio.pdf",
+  "period": "cretacico",
+  "diet": "herbivoro",
+  "hip": "ornitisquio",
+  "location": "na",
+  "size": 8,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Estaba cubierto de armadura!",
+    "Su cola era como un martillo gigante",
+    "Era como un tanque de guerra"
+  ],
+  "description": "El Ankylosaurus significa \"Lagarto acorazado\". Medía 8 metros y vivió en el periodo cretacico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      19,
+      18,
+      8
+    ],
+    "images": [
+      "assets/images/ankylosaurus.png",
+      "assets/images/allosaurus.png",
+      "assets/images/trex.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 4
+}

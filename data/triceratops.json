@@ -1,0 +1,53 @@
+{
+  "id": "triceratops",
+  "name": "Triceratops",
+  "significado": "Cara de tres cuernos",
+  "cuento": "triceratops.pdf",
+  "period": "cretacico",
+  "diet": "herbivoro",
+  "hip": "ornitisquio",
+  "location": "na",
+  "size": 9,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Tenía tres cuernos grandes!",
+    "Su cabeza era como un escudo",
+    "Era amigo de los otros herbívoros"
+  ],
+  "description": "El Triceratops significa \"Cara de tres cuernos\". Medía 9 metros y vivió en el periodo cretacico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      16,
+      15,
+      9
+    ],
+    "images": [
+      "assets/images/triceratops.png",
+      "assets/images/riojasaurus.png",
+      "assets/images/pteranodon.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 4
+}

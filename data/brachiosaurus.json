@@ -1,0 +1,53 @@
+{
+  "id": "brachiosaurus",
+  "name": "Brachiosaurus",
+  "significado": "Lagarto brazo",
+  "cuento": "brachiosaruio.pdf",
+  "period": "jurasico",
+  "diet": "herbivoro",
+  "hip": "saurisquio",
+  "location": "na",
+  "size": 26,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Era altísimo como un edificio!",
+    "Su cuello llegaba a los árboles altos",
+    "Pesaba como 12 elefantes"
+  ],
+  "description": "El Brachiosaurus significa \"Lagarto brazo\". Medía 26 metros y vivió en el periodo jurasico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      26,
+      37,
+      45
+    ],
+    "images": [
+      "assets/images/brachiosaurus.png",
+      "assets/images/riojasaurus.png",
+      "assets/images/trex.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 4
+}

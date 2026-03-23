@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Mapa Interactivo</title>
+    <style>
+        body {
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .map-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 4px solid #4FC3F7;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            background: #e0f7fa;
+            line-height: 0;
+        }
+        .map-bg {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.8;
+        }
+        .map-overlay-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: auto;
+            z-index: 10;
+        }
+        .map-overlay-container svg {
+            width: 100%;
+            height: 100%;
+            pointer-events: auto;
+            display: block;
+        }
+        .map-overlay-container path {
+            cursor: pointer;
+            fill: transparent;
+            stroke: rgba(255,255,255,0.3);
+            stroke-width: 2;
+            pointer-events: auto;
+            transition: fill 0.3s;
+        }
+        .map-overlay-container path:hover {
+            fill: rgba(255,255,255,0.3);
+        }
+        #log {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Mapa Interactivo - Click en los continentes</h1>
+    
+    <div class="map-container">
+        <img src="imagenes/mapa.png" class="map-bg" alt="Mapa del mundo">
+        <div class="map-overlay-container"></div>
+    </div>
+
+    <div id="log">
+        <strong>Log de eventos:</strong><br>
+        <div id="log-content"></div>
+    </div>
+
+    <script>
+        const testLocation = 'na';
+        
+        async function setupInteractiveMap() {
+            const mapContainer = document.querySelector('.map-overlay-container');
+            if (!mapContainer) {
+                log('ERROR: No se encontró .map-overlay-container');
+                return;
+            }
+            
+            log('Cargando SVG...');
+            const mapRes = await fetch('assets/icons/world_map_interactive.svg');
+            const mapSVGText = await mapRes.text();
+            
+            log('SVG cargado, parseando...');
+            const parser = new DOMParser();
+            const svgDoc = parser.parseFromString(mapSVGText, 'image/svg+xml');
+            const svgElement = svgDoc.querySelector('svg');
+            
+            if (svgElement) {
+                log('SVG encontrado, configurando...');
+                svgElement.setAttribute('width', '100%');
+                svgElement.setAttribute('height', '100%');
+                svgElement.setAttribute('preserveAspectRatio', 'none');
+                svgElement.style.display = 'block';
+                svgElement.style.pointerEvents = 'auto';
+                
+                mapContainer.appendChild(svgElement);
+                log('SVG añadido al DOM');
+                
+                const paths = svgElement.querySelectorAll('path.continent');
+                log(`Encontrados ${paths.length} continentes`);
+                
+                paths.forEach(p => {
+                    p.style.pointerEvents = 'auto';
+                    p.style.fill = 'transparent';
+                    p.style.stroke = 'rgba(255,255,255,0.3)';
+                    p.style.strokeWidth = '2';
+                    p.onclick = (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        log(`¡Click en continente: ${p.id}!`);
+                        checkLocation(p.id, p);
+                    };
+                    log(`- Configurado continente: ${p.id}`);
+                });
+            } else {
+                log('ERROR: No se pudo parsear el SVG');
+            }
+        }
+
+        function checkLocation(regionId, element) {
+            log(`Verificando: ${regionId} === ${testLocation}`);
+            
+            if (testLocation === regionId) {
+                log('✓ ¡CORRECTO! - Verde');
+                element.style.fill = 'rgba(76, 255, 0, 0.8)';
+                element.style.stroke = 'rgba(76, 255, 0, 1)';
+                element.style.strokeWidth = '3';
+            } else {
+                log('✗ INCORRECTO - Rojo temporal');
+                element.style.fill = 'rgba(255, 0, 0, 0.8)';
+                element.style.stroke = 'rgba(255, 0, 0, 1)';
+                element.style.strokeWidth = '3';
+                setTimeout(() => {
+                    log('Reseteando color...');
+                    element.style.fill = 'transparent';
+                    element.style.stroke = 'rgba(255,255,255,0.3)';
+                    element.style.strokeWidth = '2';
+                }, 600);
+            }
+        }
+
+        function log(msg) {
+            const logContent = document.getElementById('log-content');
+            const time = new Date().toLocaleTimeString();
+            logContent.innerHTML += `[${time}] ${msg}<br>`;
+        }
+
+        setupInteractiveMap();
+        log(`Objetivo: Click en continente "${testLocation}"`);
+    </script>
+</body>
+</html>

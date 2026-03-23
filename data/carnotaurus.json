@@ -1,0 +1,53 @@
+{
+  "id": "carnotaurus",
+  "name": "Carnotaurus",
+  "significado": "Toro carnívoro",
+  "cuento": "carnotaurus.pdf",
+  "period": "cretacico",
+  "diet": "carnivoro",
+  "hip": "saurisquio",
+  "location": "sa",
+  "size": 8,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Tenía dos cuernos como un toro!",
+    "Sus brazos eran muy pequeñitos",
+    "Corría muy rápido"
+  ],
+  "description": "El Carnotaurus significa \"Toro carnívoro\". Medía 8 metros y vivió en el periodo cretacico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      8,
+      1,
+      3
+    ],
+    "images": [
+      "assets/images/carnotaurus.png",
+      "assets/images/stegosaurus.png",
+      "assets/images/spinosaurus.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

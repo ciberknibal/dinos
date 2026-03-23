@@ -1,0 +1,53 @@
+{
+  "id": "allosaurus",
+  "name": "Allosaurus",
+  "significado": "Lagarto extraño",
+  "cuento": "allosaurus.pdf",
+  "period": "jurasico",
+  "diet": "carnivoro",
+  "hip": "saurisquio",
+  "location": "na",
+  "size": 10,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Era un gran cazador!",
+    "Tenía dientes afilados como cuchillos",
+    "Cazaba en grupo con sus amigos"
+  ],
+  "description": "El Allosaurus significa \"Lagarto extraño\". Medía 10 metros y vivió en el periodo jurasico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      10,
+      21,
+      1
+    ],
+    "images": [
+      "assets/images/allosaurus.png",
+      "assets/images/pachycephalosaurus.png",
+      "assets/images/brachiosaurus.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 2
+}

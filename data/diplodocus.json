@@ -1,0 +1,53 @@
+{
+  "id": "diplodocus",
+  "name": "Diplodocus",
+  "significado": "Doble viga",
+  "cuento": "diplodocus.pdf",
+  "period": "jurasico",
+  "diet": "herbivoro",
+  "hip": "saurisquio",
+  "location": "na",
+  "size": 27,
+  "reproduction": "oviparo",
+  "caracteristicas": [
+    "¡Era el dinosaurio más largo!",
+    "Su cola era como un látigo",
+    "Tenía el cuello larguísimo"
+  ],
+  "description": "El Diplodocus significa \"Doble viga\". Medía 27 metros y vivió en el periodo jurasico.",
+  "options": {
+    "period": [
+      "triasico",
+      "jurasico",
+      "cretacico"
+    ],
+    "diet": [
+      "herbivoro",
+      "carnivoro"
+    ],
+    "hip": [
+      "saurisquio",
+      "ornitisquio"
+    ],
+    "reproduction": [
+      "oviparo",
+      "viviparo"
+    ],
+    "size": [
+      27,
+      40,
+      16
+    ],
+    "images": [
+      "assets/images/diplodocus.png",
+      "assets/images/argentinosaurus.png",
+      "assets/images/velociraptor.png"
+    ],
+    "legs": [
+      2,
+      4
+    ]
+  },
+  "correct_image_index": 0,
+  "legs": 4
+}
