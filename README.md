@@ -1,5 +1,7 @@
 # Dino Fichas
 
+Programa de dinosaurios para niños de 4 años. Fichas con información, puzzles, colorear, etc.
+
 ## Instrucciones para los Sonidos
 Como soy una IA basada en texto, no puedo generar archivos de audio reales (.mp3). He creado la estructura para que funcionen, pero necesitas añadir tus propios archivos de sonido en la carpeta `assets/sounds/`:
 
